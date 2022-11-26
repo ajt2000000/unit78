@@ -13,45 +13,558 @@
   <meta name="apple-mobile-web-app-title" content="Flitank">
   <link rel="manifest" href="manifest.json">
   </head>
- <center>
-  </hr>
- </div class=fonts>
-</div>
-  <hr>
-<div class="box22">
- <hr>
-<script async src="https://cse.google.com/cse.js?cx=1bb3aad54f0731a98"></script>
-<div class="gcse-search"></div>
-  </hr>
- <a href="index.html" style="text-decoration:none;">ホーム</a>
-    <a href="cdon.html" style="text-decoration:none;">AppStore</a>
-   <a href="https://sites.google.com/view/e-typing-tx/%E3%83%9B%E3%83%BC%E3%83%A0" style="text-decoration:none;">タイピング</a>
-</div>
-  <hr>
- </center>
- </html>
-<style>
- .box22{
-    padding: 0.5em 1em;
-    margin: 1em 0;
-    background: #f4f4f4;
-    border-left: solid 6px #5bb7ae;
-    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.33);
+<html lang="ja"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="theme-color" content="#000020">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sonolus">
+    <meta property="og:title" content="Sonolus">
+    <meta property="og:description" content="Sonolus - Next Generation Rhythm Game">
+    <meta property="og:image" content="https://sonolus.com/res/icon.png">
+    <meta property="og:url" content="https://sonolus.com/">
+    <link rel="icon" href="./res/thumb.png">
+    <link rel="apple-touch-icon" href="./res/thumb-apple.png">
+    <link rel="stylesheet" type="text/css" href="./src.v2giytdsif/style.css">
+    <title>Sonolus - Next Generation Rhythm Game</title>
+    <meta name="description" content="Sonolus is a next generation Mobile Rhythm Game that aims to provide maximum freedom to players and level makers.">
+</head>
+
+<body style="background-color: rgb(0, 17, 29);">
+    <script src="./src.v2giytdsif/tween.js"></script>
+    <script src="./src.v2giytdsif/logoAnimation.js"></script>
+    <script src="./src.v2giytdsif/backgroundAnimation.js"></script>
+
+    <canvas id="canvas" width="1600" height="605"></canvas>
+
+    <div id="main">
+        <div class="box">
+            <div class="m-b-l app-icon m-lr-auto">
+                <img class="app-icon" src="./res/icon.png">
+            </div>
+            <div class="m-b-l center">
+                <span id="app-description">Sonolusとは、プレイヤーと譜面制作者の自由度を重視して作り上げた次世代リズムゲーム</span>
+            </div>
+            <div class="m-b-m center bold">
+                0.6.3 (1) Beta
+            </div>
+            <div class="m-b-m center">
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/apple-brands.png">
+                    <a id="dl-ios" href="https://wiki.sonolus.com/getting-started/ja/installing/ios.html" target="_blank">iOS</a>
+                </span>
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/android-brands.png">
+                    <a id="dl-android" href="https://wiki.sonolus.com/getting-started/ja/installing/android.html" target="_blank">Android</a>
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <div class="m-b-l center bold large">
+                <span id="script-title">スクリプト駆動</span>
+            </div>
+            <div class="m-b-m">
+                <p>
+                    <span id="script-description">高性能スクリプトエンジンを基に、どのようなリズムゲームエンジンでも開発できる。<br>現有のリズムゲームを再現するか、全く新しいゲームエンジンを創るか、可能性は無限大。</span>
+                </p>
+                <p>
+                    <span id="script-link1">詳しい情報は</span>
+                    <a href="https://github.com/NonSpicyBurrito/sonolus-wiki/wiki" target="_blank">wiki</a>
+                    <span id="script-link2">から</span>
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="m-b-l center bold large">
+                <span id="servers-title">サーバー</span>
+            </div>
+            <div class="m-b-m">
+                <p>
+                    <span id="servers-description">様々なゲームモードに対応するサーバーがあります。</span>
+                </p>
+                <p>
+                    <span id="servers-link">コミュニティに入り、たくさんのコンテンツを楽しもう。</span>
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="m-b-l center bold large">
+                <span id="community-title">コミュニティ</span>
+            </div>
+            <div class="m-b-l">
+                <span id="community-description">最新開発ニュースや情報などはぜひコミュニティに入ってみよう！</span>
+            </div>
+            <div class="m-b-m center">
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/discord-brands.png">
+                    <a href="https://discord.gg/zStqbJahH7" target="_ lank">Discord</a>
+                </span>
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/qq-brands.png">
+                    <a href="https://jq.qq.com/?_wv=1027&amp;k=3iNyJgRv" target="_ lank">1126890062</a>
+                </span>
+            </div>
+        </div>
+        <div class="box">
+            <div class="m-b-l center bold large">
+                <span id="support-title">応援する</span>
+            </div>
+            <div class="m-b-l">
+                <span id="support-description">Sonolusが楽しいと思う方はもし宜しければ、金銭的な負担を減らすためのご支援はぜひよろしくお願いします。</span>
+            </div>
+            <div class="m-b-m center">
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/patreon-brands.png">
+                    <a href="https://www.patreon.com/Sonolus" target="_ lank">Patreon</a>
+                </span>
+                <span class="m-lr-m no-break">
+                    <img class="icon" src="./res/afdian-brands.png">
+                    <a href="https://afdian.net/@Sonolus" target="_ lank">爱发电</a>
+                </span>
+            </div>
+        </div>
+        <div id="footer" class="center">
+            Contact: burritoyangster@gmail.com
+        </div>
+    </div>
+
+    <div id="bar"></div>
+
+    <a id="select-language" onclick="openSelectLanguage()">
+        <img id="select-language-icon" src="./res/globe-solid.png">
+    </a>
+
+    <div id="select-language-popup" onclick="onPopupClick(event)">
+        <div id="select-language-popup-content" class="center"><div class="m-b-m"><a>English (English)</a></div><div class="m-b-m"><a>简体中文 (Simplified Chinese)</a></div><div class="m-b-m"><a>繁體中文 (Traditional Chinese)</a></div><div class="m-b-m"><a>日本語 (Japanese)</a></div><div class="m-b-m"><a>한국어 (Korean)</a></div><div class="m-b-m"><a>Español (Spanish)</a></div><div class="m-b-m"><a>Bahasa Indonesia (Indonesian)</a></div></div>
+    </div>
+
+    <div id="cover" style="background-color: rgba(0, 0, 32, 0); display: none;"></div>
+
+    <img id="logo-left" src="./res/logo-left.png" onload="onLogoLoad()" style="opacity: 1; width: 2rem; height: 2rem; top: 1rem; left: calc((50vw - 3.93056rem) - 1rem);">
+    <div id="logo-container-right" style="left: calc(50vw - 3.93056rem + 1rem + 0.222222rem); width: calc((50vw + 3.93056rem + 1rem) - (50vw - 3.93056rem + 1rem + 0.222222rem));">
+        <img id="logo-right" src="./res/logo-right.png" onload="onLogoLoad()">
+    </div>
+
+    <script src="./src.v2giytdsif/i18n.js"></script>
+<script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon="{&quot;rayId&quot;:&quot;77015ef1bd3ef8a3&quot;,&quot;version&quot;:&quot;2022.11.3&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;f6ef09d820f942b1ab2c87c59796f0a8&quot;,&quot;si&quot;:100}" crossorigin="anonymous"></script>
+
+
+</body></html>
+ <style>
+  <style>
+  ody {
+    color: white;
+    background-color: rgb(0, 0, 32);
+    font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'Microsoft Yahei', 'å¾®è½¯é›…é»‘', STXihei, 'åŽæ–‡ç»†é»‘',
+        'ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, 'ãƒ¡ã‚¤ãƒªã‚ª', Meiryo, 'ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯', 'MS PGothic',
+        sans-serif;
 }
-.box22 h1 {
-    margin: 0; 
-    padding: 0;
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: underline;
 }
- .box12{
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    color: #5989cf;
-    background: #c6e4ff;
-    border-bottom: solid 6px #aac5de;
-    border-radius: 9px;
+
+#canvas {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: -1;
 }
-.box12 a {
-    margin: 0; 
-    padding: 0;
+
+#main {
+    margin: 6rem 1rem 2rem;
 }
-</style>
+
+.box {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    max-width: 40rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.m-b-s {
+    margin-bottom: 0.5rem;
+}
+
+.m-b-m {
+    margin-bottom: 1rem;
+}
+
+.m-b-l {
+    margin-bottom: 2rem;
+}
+
+.m-lr-s {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.m-lr-m {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.m-lr-l {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.m-lr-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-break {
+    white-space: nowrap;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.large {
+    font-size: 1.5rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: text-bottom;
+}
+
+.app-icon {
+    width: 5rem;
+    height: 5rem;
+}
+
+#bar {
+    position: fixed;
+    width: 100vw;
+    height: 4rem;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+}
+
+#select-language {
+    position: fixed;
+    width: 4rem;
+    height: 4rem;
+    right: 0;
+    top: 0;
+}
+
+#select-language-icon {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    left: 1rem;
+    top: 1rem;
+}
+
+#select-language-popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    opacity: 0;
+}
+
+#select-language-popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: calc(min(100vw - 4rem, 40rem));
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+#cover {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 32);
+}
+
+#logo-left {
+    position: fixed;
+    width: calc(75vw * 360 / 1775 * 1.5);
+    height: calc(75vw * 360 / 1775 * 1.5);
+    top: calc(50vh - 75vw * 360 / 1775 * 1.5 / 2);
+    left: calc(50vw - 75vw * 360 / 1775 * 1.5 / 2);
+    opacity: 0;
+}
+
+#logo-container-right {
+    position: fixed;
+    overflow: hidden;
+    width: 0rem;
+    height: 2rem;
+    left: 0rem;
+    top: 1rem;
+}
+
+#logo-right {
+    position: absolute;
+    width: calc(1375 / 360 * 2rem);
+    height: 2rem;
+    right: 0;
+    top: 0;
+}
+
+#footer {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.25);
+}
+ </style>
+ <script>
+  /* exported startBackgroundAnimation */
+/* global tween */
+
+var colors = [
+    [0, 0, 32],
+    [13, 0, 31],
+    [0, 0, 32],
+    [0, 17, 29],
+]
+var colorIndex = 0
+
+var canvasWidth
+var canvasHeight
+
+var started
+var canvas
+var ctx
+
+var width
+var height
+var size
+var halfSize
+var offsetX
+var offsetY
+var lastUpdateTime
+var animations = []
+
+window.onresize = updateResize
+updateResize()
+
+function startBackgroundAnimation() {
+    started = true
+    tweenBackgroundColor()
+
+    canvas = document.getElementById('canvas')
+    ctx = canvas.getContext('2d')
+
+    intialize()
+    renderBackground()
+}
+
+function tweenBackgroundColor() {
+    var oldColor = colors[colorIndex]
+    colorIndex = (colorIndex + 1) % colors.length
+    var newColor = colors[colorIndex]
+
+    tween(
+        2,
+        function(x) {
+            var nx = x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2
+            var ox = 1 - nx
+            document.body.style.backgroundColor =
+                'rgb(' +
+                (oldColor[0] * ox + newColor[0] * nx) +
+                ', ' +
+                (oldColor[1] * ox + newColor[1] * nx) +
+                ', ' +
+                (oldColor[2] * ox + newColor[2] * nx) +
+                ')'
+        },
+        tweenBackgroundColor
+    )
+}
+
+function updateResize() {
+    canvasWidth = document.documentElement.clientWidth || window.innerWidth
+    canvasHeight = document.documentElement.clientHeight || window.innerHeight
+    if (started) {
+        intialize()
+    }
+}
+
+function intialize() {
+    canvas.width = canvasWidth
+    canvas.height = canvasHeight
+
+    width = 9
+    height = Math.ceil((canvasHeight / canvasWidth) * 8) + 1
+
+    size = canvasWidth / 8
+    halfSize = size / 2
+    offsetX = ((width - 1) / canvasWidth) * size
+    offsetY = ((height - 1) / canvasWidth) * size
+
+    lastUpdateTime = undefined
+    animations = []
+}
+
+function renderBackground() {
+    var time = Date.now()
+
+    var updateTime = Math.floor(time / 100)
+    if (updateTime !== lastUpdateTime) {
+        lastUpdateTime = updateTime
+
+        var animation = {
+            index: randomInt(width) + randomInt(height) * width,
+            intensity: Math.random(),
+            speed: (Math.random() + 0.5) * 1000,
+            startTime: time,
+        }
+        animation.centerTime = animation.startTime + animation.speed
+        animation.endTime = animation.centerTime + animation.speed
+        animations.push(animation)
+    }
+
+    var scaleArray = new Array(width * height).fill(0)
+
+    for (var i = animations.length - 1; i >= 0; i--) {
+        var animation = animations[i]
+        if (time >= animation.endTime) {
+            animations.splice(i, 1)
+        } else {
+            scaleArray[animation.index] = Math.max(
+                scaleArray[animation.index],
+                ((time >= animation.centerTime ? animation.endTime - time : time - animation.startTime) *
+                    animation.intensity) /
+                    animation.speed
+            )
+        }
+    }
+
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight)
+    for (var x = 0; x < width; x++) {
+        for (var y = 0; y < height; y++) {
+            var index = x + y * width
+            var scale = scaleArray[index]
+            var cx = x * size - offsetX
+            var cy = y * size - offsetY
+            var a = 0.25 * scale
+            var s = halfSize * (0.75 + 0.25 * scale)
+            ctx.fillStyle = 'rgba(255, 255, 255, ' + a + ')'
+            ctx.fillRect(cx - s, cy - s, s * 2, s * 2)
+        }
+    }
+
+    requestAnimationFrame(renderBackground)
+}
+
+function randomInt(max) {
+    return Math.floor(Math.random() * max)
+}
+  /* exported onLogoLoad */
+/* global tween, startBackgroundAnimation */
+
+var divCover
+var imgLogoLeft
+var divLogoRight
+
+var logoLoaded = 0
+
+function onLogoLoad() {
+    logoLoaded++
+    if (logoLoaded >= 2) {
+        StartAnimation()
+    }
+}
+
+function StartAnimation() {
+    divCover = document.getElementById('cover')
+    imgLogoLeft = document.getElementById('logo-left')
+    divLogoRight = document.getElementById('logo-container-right')
+
+    AnimateFadeIn()
+}
+
+function AnimateFadeIn() {
+    tween(
+        1,
+        function(x) {
+            imgLogoLeft.style.opacity = x
+        },
+        AnimateScaleAndMove
+    )
+}
+
+function AnimateScaleAndMove() {
+    tween(
+        0.5,
+        function(x) {
+            var sx = 2.70158 * x * x * x - 1.70158 * x * x
+            var px = x * x * x * x * x
+
+            imgLogoLeft.style.width = 'calc(75vw * 360 / 1775 * 1.5 * ' + (1 - sx) + ' + 2rem * ' + sx + ')'
+            imgLogoLeft.style.height = 'calc(75vw * 360 / 1775 * 1.5 * ' + (1 - sx) + ' + 2rem * ' + sx + ')'
+
+            imgLogoLeft.style.top =
+                'calc(50vh * ' +
+                (1 - px) +
+                ' + 2rem * ' +
+                px +
+                ' - (75vw * 360 / 1775 * 1.5 * ' +
+                (1 - sx) +
+                ' + 2rem * ' +
+                sx +
+                ') / 2)'
+            imgLogoLeft.style.left = 'calc(50vw - (75vw * 360 / 1775 * 1.5 * ' + (1 - sx) + ' + 2rem * ' + sx + ') / 2)'
+        },
+        AnimateExpand
+    )
+}
+
+function AnimateExpand() {
+    imgLogoLeft.style.width = '2rem'
+    imgLogoLeft.style.height = '2rem'
+    imgLogoLeft.style.top = '1rem'
+
+    tween(
+        1,
+        function(x) {
+            var px = 1 - Math.pow(1 - x, 3)
+
+            imgLogoLeft.style.left = 'calc(50vw - 1415 / 360 / 2 * 2rem * ' + px + ' - 1rem)'
+
+            divLogoRight.style.left = 'calc(50vw - 1415 / 360 / 2 * 2rem * ' + px + ' + 1rem + 40 / 360 * 2rem)'
+            divLogoRight.style.width =
+                'calc(50vw + 1415 / 360 / 2 * 2rem * ' +
+                px +
+                ' + 1rem - (50vw - 1415 / 360 / 2 * 2rem * ' +
+                px +
+                ' + 1rem + 40 / 360 * 2rem))'
+
+            divCover.style.backgroundColor = 'rgba(0, 0, 32, ' + (1 - px) + ')'
+        },
+        function() {
+            divCover.style.display = 'none'
+            startBackgroundAnimation()
+        }
+    )
+}
+ </script>
