@@ -7,8 +7,35 @@
 </head>
 <main>
 
+    <button type="button" class="menu-btn">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    <div class="menu">
+      <div class="menu__item">TOP</div>
+      <div class="menu__item">ABOUT</div>
+      <div class="menu__item">BLOG</div>
+      <div class="menu__item">CONTACT</div>
+    </div>
 </main>
 <style>
+    
+    
+* メニュー開閉ボタン
+*----------------------------*/
+.menu-btn{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  color: #fff;
+}
+    
 {
   "theme_color": "#008b8b"
   }
@@ -16,8 +43,7 @@ html {
   touch-action: manipulation;
     }
 body {
-background-color: #696969
-;
+background-color: #777799;
     }
 </style>
 <script>
@@ -34,6 +60,12 @@ background-color: #696969
   }
   t = now;
   }, false);
+    
+    $(function(){
+  $('.menu-btn').on('click', function(){
+    $('.menu').toggleClass('is-active');
+  });
+}());
 </script>
 <style>
   body , input , textarea , select {
