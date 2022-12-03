@@ -6,7 +6,39 @@
      <meta name="theme-color" content="#008b8b"/>
 </head>
 <main>
-	<button id="installButton" class="btn btn-success d-none" style="display:none" type="button">
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Headers - 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/header-2.css">
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <a href="#" class="brand">Brand</a>
+        <nav class="nav">
+          <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+          </button>
+          <ul class="nav__wrapper">
+            <li class="nav__item"><a href="#">Home</a></li>
+            <li class="nav__item"><a href="#">About</a></li>
+            <li class="nav__item nav__item--end"><a href="#">Services</a></li>
+            <li class="nav__item"><a href="#">Hire us</a></li>
+            <li class="nav__item"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <script src="js/header-2.js"></script>
+  
+
+</body></html>
 </main>
 <style>
 {
@@ -27,68 +59,6 @@ background-color: #777799;
 			navigator.serviceWorker.register('sw.js');
 
 		});
-	}
-	// ---------- アイコンをホーム画面に追加
-	let deferredPrompt;
-	window.addEventListener('beforeinstallprompt', (e) => {
-		// ブラウザデフォルトの処理を抑制する
-		event.preventDefault();
-		// イベントを変数に保存する
-		deferredPrompt = event;
-		// インストールボタンを表示
-		document.getElementById('installButton').classList.replace('d-none','d-block');
-
-//		// ↓このコードは動かない。直接promptを呼べない。
-//	e.prompt()
-//		.then(res => console.log(res))
-//		.catch(error => { console.log(`----> ${error}`) });
-	});
-	document.getElementById('installButton').addEventListener('click', async () => {
-		// インストールボタンを非表示
-		document.getElementById('installButton').classList.replace('d-block','d-none');
-		// プロンプトを表示
-		deferredPrompt.prompt();
-		// ユーザー操作待ち
-		const { outcome } = await deferredPrompt.userChoice;
-		// deferredPromptをクリア
-		deferredPrompt = null;
-	});
-	// ---------- インストール成功
-	window.addEventListener('appinstalled', () => {
-		// インストールボタンを非表示
-		document.getElementById('installButton').classList.replace('d-block','d-none');
-		// deferredPromptをクリア
-		deferredPrompt = null;
-	});
-})()
-    //バナーの代わりに表示するボタンを登録する
-registerInstallAppEvent(document.getElementById("InstallBtn"));
-
-//バナー表示をキャンセルし、代わりに表示するDOM要素を登録する関数
-//引数１：イベントを登録するHTMLElement
-function registerInstallAppEvent(elem){
-  //インストールバナー表示条件満足時のイベントを乗っ取る
-  window.addEventListener('beforeinstallprompt', function(event){
-    console.log("beforeinstallprompt: ", event);
-    event.preventDefault(); //バナー表示をキャンセル
-    elem.promptEvent = event; //eventを保持しておく
-    elem.style.display = "block"; //要素を表示する
-    return false;
-  });
-  //インストールダイアログの表示処理
-  function installApp() {
-    if(elem.promptEvent){
-      elem.promptEvent.prompt(); //ダイアログ表示
-      elem.promptEvent.userChoice.then(function(choice){
-        elem.style.display = "none";
-        elem.promptEvent = null; //一度しか使えないため後始末
-      });//end then
-    }
-  }//end installApp
-  //ダイアログ表示を行うイベントを追加
-  elem.addEventListener("click", installApp);
-}//end registerInstallAppEvent
-
     const ham = document.querySelector('#js-hamburger');
 const nav = document.querySelector('#js-nav');
 
@@ -124,6 +94,68 @@ $(function() {
 });
 </script>
 <style>
+	/* 
+** The Header Media Queries **
+** Tweak as per your needs **
+*/
+.brand {
+  font-weight: bold;
+  font-size: 20px; }
+
+.site-header {
+  position: relative;
+  background-color: #def7ff; }
+
+.site-header__wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+  @media (min-width: 600px) {
+    .site-header__wrapper {
+      display: flex;
+      align-items: center;
+      padding-top: 0;
+      padding-bottom: 0; } }
+.nav {
+  flex: 1; }
+
+@media (min-width: 600px) {
+  .nav__wrapper {
+    display: flex; } }
+
+@media (max-width: 599px) {
+  .nav__wrapper {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #d9f0f7;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
+    .nav__wrapper.active {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0); } }
+
+.nav__item a {
+  display: block;
+  padding: 1.5rem 1rem; }
+
+@media (min-width: 600px) {
+  .nav__item--end {
+    margin-left: auto; } }
+
+.nav__toggle {
+  display: none; }
+  @media (max-width: 599px) {
+    .nav__toggle {
+      display: block;
+      position: absolute;
+      right: 1rem;
+      top: 1rem; } }
+
   body , input , textarea , select {
   /* 入力欄にフォーカスが当たっても拡大しない */
     font-size:17px;
