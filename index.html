@@ -6,11 +6,7 @@
      <meta name="theme-color" content="#008b8b"/>
 </head>
 <main>
-<button id="InstallBtn" class="installbotton">
- アプリをインストールする
- </button>
- </div>
- <script src="install.js"></script>
+    <button id="installButton" class="btn btn-success d-none" type="button">インストール</button>
 </main>
 <style>
 {
@@ -24,6 +20,47 @@ background-color: #777799;
     }
 </style>
 <script>
+    (function () {
+	// ---------- serviceWorkerの使用
+	if ('serviceWorker' in navigator) {
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('sw.js');
+
+		});
+	}
+	// ---------- アイコンをホーム画面に追加
+	let deferredPrompt;
+	window.addEventListener('beforeinstallprompt', (e) => {
+		// ブラウザデフォルトの処理を抑制する
+		event.preventDefault();
+		// イベントを変数に保存する
+		deferredPrompt = event;
+		// インストールボタンを表示
+		document.getElementById('installButton').classList.replace('d-none','d-block');
+
+//		// ↓このコードは動かない。直接promptを呼べない。
+//	e.prompt()
+//		.then(res => console.log(res))
+//		.catch(error => { console.log(`----> ${error}`) });
+	});
+	document.getElementById('installButton').addEventListener('click', async () => {
+		// インストールボタンを非表示
+		document.getElementById('installButton').classList.replace('d-block','d-none');
+		// プロンプトを表示
+		deferredPrompt.prompt();
+		// ユーザー操作待ち
+		const { outcome } = await deferredPrompt.userChoice;
+		// deferredPromptをクリア
+		deferredPrompt = null;
+	});
+	// ---------- インストール成功
+	window.addEventListener('appinstalled', () => {
+		// インストールボタンを非表示
+		document.getElementById('installButton').classList.replace('d-block','d-none');
+		// deferredPromptをクリア
+		deferredPrompt = null;
+	});
+})()
     //バナーの代わりに表示するボタンを登録する
 registerInstallAppEvent(document.getElementById("InstallBtn"));
 
